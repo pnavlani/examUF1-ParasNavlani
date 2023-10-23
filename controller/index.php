@@ -49,5 +49,5 @@ $firstPageLink = $firstPage ? "#" : $searchQuery . "page=1";
 $lastPageLink = $lastPage ? "#" : $searchQuery . "page=$nPages";
 
 //require_once '../view/index.view.php';
-//ex.1
+//ex.2
 include '../view/index.view.php';

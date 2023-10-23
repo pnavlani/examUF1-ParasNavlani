@@ -2,7 +2,8 @@
 
 require_once '../model/pdo-articles.php';
 require_once '../controller/input-common.php';
-require_once '../controller/images.php';
+//require_once '../controller/images.php';
+//ex2
 require_once '../controller/session.php';
 
 $errors = [];
@@ -32,6 +33,8 @@ if (isset($_GET['id'])) {
     $synopsis = $article['synopsis'];
 
 } else if (isset($_POST['guardar'])) {   
+    //ex4
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imagePath = "";
     $title = sanitizeString($_POST['title']);
     $director = sanitizeString($_POST['director']);
@@ -55,6 +58,7 @@ if (isset($_GET['id'])) {
         $articleId = $_SESSION["articleId"];
     }
     $article = getPost($articleId);
+}
 
 } else unset($_SESSION['articleId']);
 
@@ -75,7 +79,8 @@ require_once '../view/edit.view.php';
 function checkUserInput($title, $director, $link, $ytLink, $synopsis)
 {
     global $errors;
-
+    
+    
     // Comprovar títol
     if (empty($title))
         $errors['title'] = "Please, type the title.";
@@ -107,6 +112,7 @@ function checkUserInput($title, $director, $link, $ytLink, $synopsis)
         $errors['synopsis'] = "Please, type the synopsis.";
     elseif (strlen($synopsis) > 1500)
         $errors['synopsis'] = "Synopsis too long.";
+    
 }
 
 /**

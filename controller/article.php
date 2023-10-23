@@ -24,6 +24,6 @@ if (empty($article)) {
     $imagePath = $article['image_path'];
     $filetime = filemtime("../uploads/$imagePath");
    // require_once '../view/article.view.php';
-   //ex1
+   //ex2
    include '../view/article.view.php';
 }

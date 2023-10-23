@@ -20,5 +20,5 @@ require_once '../controller/session.php';
     $passwordActive = $file == "change-password" ? "active" : "";    
 
     //require_once '../view/navbar.view.php';
-    //ex1
+    //ex2
     include '../view/navbar.view.php';

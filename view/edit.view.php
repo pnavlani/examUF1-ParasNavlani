@@ -28,9 +28,9 @@
         <div class="row justify-content-center h-100">
             <div class="edit d-grid gap-3 p-4 border col-md-10 col-12 align-items-center">
 
-                
-                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="form" method="POST" novalidate enctype="multipart/form-data">
-                    
+                <!--ex 4  -->
+             <!--   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="form" method="POST" novalidate enctype="multipart/form-data"> -->
+             <form action="edit.php" id="form" method="POST" novalidate enctype="multipart/form-data">
                     <header class="col-12 d-flex justify-content-between mb-4">
                         <h3>
                             <?php echo isset($_SESSION["articleId"]) ? "Edit" : "Create new" ?> article
