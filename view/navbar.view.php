@@ -10,11 +10,13 @@
         <li class="nav-item align-self-center">
           <form method="GET" action="index.php" class="input-group input-group-sm">
             <input type="search" name="search" class="form-control" placeholder="Search a movie" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>"/>
+            <input type="search" name="date" class="form-control" placeholder="Search a movie by date" value="<?php echo isset($_GET['date']) ? $_GET['date'] : '' ?>"/>
             <button type="submit" title="Search a movie" class="btn btn-secondary">
               <i class="icon-search"></i>
             </button>
-          </form>
-        </li>
+        </form>
+          </li>
+          
         <li class="nav-item rounded">
           <a class="nav-link <?php echo $homeActive ?>" aria-current="page" href="index.php"><i
               class="bi bi-house-fill me-2"></i><span class="icon-home"></span>Home</a>
@@ -35,6 +37,9 @@
                 <li><a class="dropdown-item $createActive" href="edit.php"><span class="icon-plus"></span> New post</a></li>
                 <li><a class="dropdown-item $passwordActive $changePasswordVisibility" href="change-password.php"><span class="icon-key"></span> Change password</a></li>
                 <li><a class="dropdown-item " href="recovery-password.php"><span class="icon-key"></span> Recovery password</a></li>
+                  <form action="navbar.php" method="post">
+                <li><input type="submit" class="dropdown-item"  name="donarBaixa" value="Donar de Baixa"></li>
+                  </form>
                 <div class="dropdown-divider"></div>
                 <li><a class="dropdown-item" href="clear-session.php"><span class="icon-logout"></span> Log out</a></li>
                 STR;

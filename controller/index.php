@@ -7,9 +7,11 @@ $postsPerPage = 10;
 
 $orderBy = 'date-desc';
 
+//ex12
 $searchTerm = "";
+$searchDate = "";
 if (isset($_GET['search'])) $searchTerm = $_GET['search'];
-
+if (isset($_GET['date'])) $searchDate = $_GET['date'];
 session_start();
 $userId = getSessionUserId();
 

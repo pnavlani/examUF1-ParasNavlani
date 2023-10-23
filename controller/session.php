@@ -1,6 +1,7 @@
 <?php
 
 require_once "../model/pdo-users.php";
+require_once("../model/db-connection.php");
 
 /**
  * Inicia la sessió d'un usuari per email
@@ -35,8 +36,11 @@ function startSessionByUserId($userId)
 
 function setSessionLifeTime()
 {    
-    ini_set('session.gc_maxlifetime', 1800);
-    ini_set('session.cookie-lifetime', 1800);
+   // ini_set('session.gc_maxlifetime', 1800);
+   // ini_set('session.cookie-lifetime', 1800);
+   //ex9
+   session_set_cookie_params(900);
+   session_start();
 }
 
 /**
@@ -72,3 +76,6 @@ function getSessionUserId() {
         return 0;
     }
 }
+
+
+ 

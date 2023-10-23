@@ -29,6 +29,14 @@
 
 					echo " <span class='badge bg-secondary'>$nArticles</span>"
 				?>
+
+<?php
+					if (empty($searchDate)) {
+						echo $userId == 0 ? "All the movies" : "My movies";
+					} else echo "Search results for: " . $searchDate;
+
+					echo " <span class='badge bg-secondary'>$nArticles</span>"
+				?>
 			</a>
 		</h3>
 	</header>
